@@ -1,0 +1,1210 @@
+$baseThemeColor: #a81c20;
+$textColor: #747373;
+$headingColor: #000;
+$linkColor: #444;
+$baseBlackColor: #16295f;
+$baseFontSize: 14px;
+$baseFontFamily: 'Lora',
+serif;
+$titleFont:'IBM Plex Sans',
+sans-serif;
+
+body {
+    color: $headingColor;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $headingColor;
+    }
+
+    .text-default {
+        color: #EB5757;
+    }
+}
+
+.oil-gas-breadcumb-area {
+    min-height: 310px;
+    display: flex;
+    align-items: flex-end;
+
+    @media (max-width:767px) {
+        min-height: 220px;
+    }
+
+    .container {
+        @media (min-width:1300px) {
+            width: 1110px;
+        }
+    }
+}
+
+.oilgas-news-details-area {
+    .container {
+        @media (min-width:1300px) {
+            width: 1110px;
+        }
+    }
+
+    .viral-video-wrap {
+        .viral-video-content {
+            .all-video {
+                min-width: 180px;
+            }
+        }
+    }
+
+    .opening-pull-wrap {
+        .opening-pull-footer {
+            .vote-btn {
+                width: 65px;
+            }
+        }
+    }
+}
+
+.oil-gas-breadcumb-wrap {
+
+    h2,
+    h1 {
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 42px;
+        color: #fff;
+        margin-bottom: 5px;
+        font-family: $titleFont;
+
+        @media (max-width:767px) {
+            font-size: 24px;
+        }
+    }
+
+    .oil-gas-breadcumb-filtar {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+
+        li {
+            color: #fff;
+            font-family: $titleFont;
+
+            &::before {
+                content: "/";
+                margin: 0px 5px;
+            }
+
+            &:first-child {
+                &::before {
+                    display: none;
+                }
+            }
+
+            a {
+                color: #fff;
+                font-family: $titleFont;
+
+                &:hover {
+                    color: $baseThemeColor;
+                }
+            }
+        }
+    }
+
+    .oil-gas-breadcumb-menu {
+        display: inline-flex;
+        align-items: center;
+        min-height: 40px;
+        background: $baseThemeColor;
+        padding: 10px 0;
+        flex-wrap: wrap;
+
+        @media (max-width:991px) {
+            display: none;
+        }
+
+        li {
+            padding: 0px 35px;
+            border-right: 1px solid rgba(255, 255, 255, .6);
+            line-height: 18px;
+            font-family: $titleFont;
+
+            @media (max-width:767px) {
+                padding: 0px 25px;
+                margin-bottom: 10px;
+            }
+
+            &:last-child {
+                border-right: none;
+            }
+
+            a {
+                display: inline-block;
+                color: #E5E5E5;
+                font-family: $titleFont;
+
+                &:hover,
+                &.active {
+                    text-decoration: underline;
+                    color: #fff;
+
+                }
+
+                &.active {
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+.oil-gas-featured-area {
+    padding: 50px 0 20px;
+    background: #E7E7E7;
+
+    .container {
+        @media (min-width:1300px) {
+            width: 1110px;
+        }
+    }
+}
+
+.oil-gas-featured-wrap {
+    background: #F8F8F8;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    font-family: $titleFont;
+
+    h3 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: bold;
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 15px;
+        font-family: $titleFont;
+
+    }
+
+    h2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        font-family: $titleFont;
+
+        span {
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 30px;
+            display: flex;
+            align-items: flex-end;
+
+            i {
+                line-height: 20px;
+                margin-left: 10px;
+            }
+        }
+
+        small {
+            font-size: 12px;
+            font-weight: 400;
+        }
+    }
+
+    ul {
+        display: flex;
+        align-items: center;
+
+        li {
+            color: $headingColor;
+            line-height: 18px;
+            font-family: $titleFont;
+
+            &:first-child {
+                &::before {
+                    display: none;
+                }
+            }
+
+            &::before {
+                content: "|";
+                margin: 0px 10px;
+            }
+        }
+    }
+}
+
+.oil-gas-post-area {
+    padding: 50px 0;
+
+    .container {
+        @media (min-width:1300px) {
+            width: 1110px;
+        }
+    }
+}
+
+.oil-gas-content-wrap {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    border-radius: 5px 5px 0px 0px;
+    overflow: hidden;
+    margin-bottom: 15px;
+
+    h4 {
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+        padding: 5px 15px;
+        font-weight: 500;
+        font-size: 14px;
+        text-transform: uppercase;
+        background: #f8f8f8;
+        margin-bottom: 0;
+        border-bottom: 1px solid #ccc;
+        font-family: $titleFont;
+
+    }
+
+    p {
+        padding: 20px;
+        font-size: 14px;
+        line-height: 20px;
+        color: $headingColor;
+
+    }
+}
+
+.shadow-wrapper {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.oil-gas-title {
+    min-height: 35px;
+    background: #EB5757;
+    border-radius: 5px 5px 0px 0px;
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    font-weight: 500;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 0;
+    font-family: $titleFont;
+
+
+}
+
+.oil-gas-sidebar-wrap {
+    &.oil-gas-sidebar-wrap2 {
+        .oil-gas-title {
+            .select2-container {
+                width: 100% !important;
+                min-width: auto !important;
+                text-align: left;
+                margin-left: 0px;
+
+                &.select2-container--focus {
+                    .selection {
+
+                        .select2-selection {
+                            outline: none;
+                        }
+                    }
+                }
+
+                &.select2-container--open {
+                    .selection {
+                        .select2-selection--single {
+                            .select2-selection__arrow {
+                                b {
+                                    border-color: transparent transparent #fff transparent;
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                .selection {
+
+                    .select2-selection {
+                        border: none;
+                        height: 25px;
+                        padding: 4px 24px 4px 0px;
+
+                        .select2-selection__rendered {
+                            padding: 0px;
+                            font-weight: 500;
+                            color: #fff;
+                            font-size: 14px;
+                            text-transform: uppercase;
+                            font-family: $titleFont;
+                        }
+
+                        .select2-selection__arrow {
+
+                            b {
+                                border-color: #fff transparent transparent transparent;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.oil-gas-table {
+    width: 100%;
+
+    @media (max-width:767px) {
+        width: 700px;
+    }
+
+    &.oil-price-table {
+        tbody {
+            tr {
+                transition: all .4s ease-in-out 0s;
+
+                &:hover {
+                    background: rgba(235, 87, 87, 0.27) !important;
+                }
+            }
+        }
+    }
+
+    thead {
+        tr {
+            th {
+                background: #E7E7E7;
+                height: 30px;
+                font-size: 12px;
+                line-height: 30px;
+                font-weight: 500;
+                font-family: $titleFont;
+
+                &:last-child {
+                    border-right: none;
+                }
+
+                .filtaring-year {
+                    border: none;
+                    font-weight: 500;
+                    background: transparent;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                .select2-container {
+                    width: unset !important;
+                    min-width: 55px !important;
+                    text-align: left;
+
+                    &.select2-container--focus {
+                        .selection {
+
+                            .select2-selection {
+                                outline: none;
+                            }
+                        }
+                    }
+
+                    &.select2-container--open {
+                        .selection {
+                            .select2-selection--single {
+                                .select2-selection__arrow {
+                                    b {
+                                        border-color: transparent transparent $headingColor transparent;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+
+                    .selection {
+                        height: unset;
+
+                        .select2-selection {
+                            background: transparent;
+                            border: none;
+                            height: unset;
+                            position: relative;
+
+                            .select2-selection__rendered {
+                                padding: 0px;
+                                font-size: 12px;
+                                line-height: 16px;
+                                color: $headingColor;
+                            }
+
+                            .select2-selection__arrow {
+                                height: unset;
+                                position: absolute;
+                                right: 0;
+                                top: 50%;
+                                transform: translateY(-50%);
+
+                                b {
+                                    border-color: $headingColor transparent transparent transparent;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            border-bottom: 1px solid #ccc;
+
+            td {
+                height: 31px;
+                font-size: 12px;
+                color: $headingColor;
+                transition: all .4s ease-in-out 0s;
+
+                &:last-child {
+                    border-right: none;
+                }
+
+                &.hoveColor {
+                    background: rgba(235, 87, 87, 0.27) !important;
+                }
+            }
+
+            &:nth-child(odd) {
+                background: #f8f8f8;
+            }
+        }
+    }
+
+}
+
+.oil-gas-title-border {
+    border: 1px solid #ccc;
+    min-height: 35px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 0;
+    padding: 5px 15px;
+    font-family: $titleFont;
+}
+
+.view-all {
+    display: inline-block;
+    color: $headingColor;
+    font-weight: 500;
+    margin-top: 10px;
+    text-decoration: underline;
+    font-family: $titleFont;
+
+    &:hover {
+        color: $baseThemeColor;
+        text-decoration: underline;
+    }
+}
+
+.oil-gas-sidebar {
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
+
+    @media (max-width:991px) {
+        margin-top: 40px;
+    }
+}
+
+.oil-gas-sidebar-dropdown {
+    width: 90px;
+    height: 30px;
+    border: 1px solid #e5e5e5;
+    background: #f8f8f8;
+    margin-left: 10px;
+
+    &:focus {
+        outline: none;
+        border-color: $baseThemeColor;
+    }
+}
+
+.oil-gas-compare {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 10px;
+
+    select {
+        font-size: 10px;
+        height: 25px;
+        border: 1px solid #e5e5e5;
+        margin-right: 10px;
+        border-radius: 3px;
+        transition: all .4s ease-in-out 0s;
+        min-width: 80px;
+
+        &:focus {
+            outline: none;
+            border-color: $baseThemeColor;
+        }
+
+        &.global {
+            width: 75px;
+        }
+    }
+
+    button {
+        height: 25px;
+        border: 1px solid #737373;
+        border-radius: 3px;
+        font-size: 12px;
+        padding: 0px 10px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $headingColor;
+        margin-left: 5px;
+
+        &:hover {
+            background: $baseThemeColor;
+            color: #fff;
+            border-color: $baseThemeColor;
+        }
+    }
+}
+
+.oil-gas-more-data {
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 5px 5px 0px 0px;
+    overflow: hidden;
+    border: 1px solid #e5e5e5;
+
+    h4 {
+        display: flex;
+        align-items: center;
+        min-height: 35px;
+        padding: 5px 20px;
+        font-size: 14px;
+        font-weight: 500;
+        background: #f8f8f8;
+        border-bottom: 1px solid #e5e5e5;
+        font-family: $titleFont;
+    }
+
+    ul {
+        padding: 15px 20px;
+
+        li {
+            line-height: 30px;
+            font-family: $titleFont;
+
+            a {
+                display: inline-block;
+                color: $headingColor;
+                font-family: $titleFont;
+
+                i {
+                    margin-right: 15px;
+                }
+
+                &:hover {
+                    color: $baseThemeColor;
+                }
+            }
+        }
+    }
+}
+
+.oil-gas-news-area {
+    padding: 50px 0;
+
+    .container {
+        @media (min-width:1300px) {
+            width: 1110px;
+        }
+    }
+
+    .viral-video-wrap {
+        .viral-video-content {
+            .all-video {
+                min-width: 180px;
+            }
+        }
+    }
+
+    .opening-pull-wrap {
+        .opening-pull-footer {
+            .vote-btn {
+                width: 65px;
+            }
+        }
+    }
+}
+
+.oil-gash-latest-news {
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+    border-bottom: 1px dashed #e5e5e5;
+
+    img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+
+        @media (max-width:767px) {
+            height: unset;
+        }
+    }
+
+    span {
+        display: block;
+        margin: 10px 0;
+        color: $textColor;
+    }
+
+    h4 {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 28px;
+
+        a {
+            color: $headingColor;
+
+            &:hover {
+                color: $baseThemeColor;
+            }
+        }
+    }
+
+    p {
+        line-height: 23px;
+
+        a {
+            display: inline-block;
+            color: #F53D3D;
+
+            &:hover {
+                color: $baseThemeColor;
+            }
+        }
+    }
+}
+
+.articles-oil-gas-area {
+    padding: 80px 0px 50px;
+
+    .container {
+        @media (min-width:1300px) {
+            width: 1110px;
+        }
+    }
+}
+
+.articles-oil-gas-wrap {
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+
+    .articles-oil-gas-img {
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+
+        span {
+            min-height: 35px;
+            min-width: 85px;
+            background: $baseThemeColor;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 14px;
+            text-transform: uppercase;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+    }
+
+    .articles-oil-gas-content {
+        padding: 20px;
+        min-height: 185px;
+
+        h4 {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 15px;
+
+            a {
+                color: $headingColor;
+                display: inline-block;
+
+                &:hover {
+                    color: $baseThemeColor;
+                }
+            }
+        }
+
+        p {
+            line-height: 18px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.industry-report-sidebar {
+    background: #F8F8F8;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    padding: 20px 15px;
+
+    @media (max-width:991px) {
+        display: none;
+    }
+
+    li {
+        a {
+            display: flex;
+            align-items: center;
+            min-height: 40px;
+            border-bottom: 1px solid #e5e5e5;
+            font-size: 16px;
+            color: $headingColor;
+            padding: 0px 20px;
+            font-family: $titleFont;
+
+            &.active {
+                background: $baseThemeColor;
+                border-color: $baseThemeColor !important;
+                color: #fff;
+            }
+        }
+
+        &:first-child {
+            a {
+                border-top: 1px solid #e5e5e5;
+            }
+        }
+    }
+}
+
+.oil-gas-industry-report-area {
+    padding: 80px 0px 50px;
+
+    @media (max-width:991px) {
+        padding: 30px 0px 10px;
+    }
+
+    .container {
+        @media (min-width:1300px) {
+            width: 1110px;
+        }
+    }
+}
+
+.industry-report-top {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e5e5e5;
+    align-items: center;
+
+    @media (max-width:991px) {
+        order: 1;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    .industry-report-top-responsive {
+        @media (max-width:991px) {
+            overflow: hidden;
+            overflow-x: scroll;
+            margin-left: 10px;
+            order: 2;
+            margin-top: 5px;
+
+            .industry-report-top-filter {
+                width: 650px;
+            }
+        }
+    }
+
+    .industry-report-top-filter {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: 40px;
+
+        @media (max-width:767px) {
+            margin-right: 20px;
+        }
+
+        li {
+            margin-right: 15px;
+            margin-bottom: 5px;
+
+            @media (max-width:767px) {
+                margin-right: 10px;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            button {
+                background: #F8F8F8;
+                border: 1px solid #A81C20;
+                border-radius: 5px;
+                min-width: 85px;
+                padding: 0px 20px;
+                min-height: 35px;
+                font-size: 14px;
+                color: $baseThemeColor;
+                font-family: $titleFont;
+
+                @media (max-width:767px) {
+                    min-height: 30px;
+                }
+
+                &:hover,
+                &.active {
+                    background: $baseThemeColor;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    .select2-container {
+        width: 110px !important;
+
+        .selection {
+            .select2-selection {
+                height: 35px;
+                display: flex;
+                align-items: center;
+                border: 1px solid $baseThemeColor;
+                padding-right: 45px;
+
+                @media (max-width:767px) {
+                    height: 30px;
+                    padding-right: 15px;
+
+                    .select2-selection__rendered {
+                        color: $baseThemeColor;
+                    }
+                }
+
+                .select2-selection__arrow {
+                    background: $baseThemeColor;
+                    width: 40px;
+                    height: 35px;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    border-top-right-radius: 3px;
+                    border-bottom-right-radius: 3px;
+
+                    @media (max-width:767px) {
+                        height: 30px;
+                        width: 20px;
+                        background: transparent;
+                        right: 5px;
+                    }
+
+                    b {
+                        border-color: #fff transparent transparent transparent;
+                        border-width: 7px 6px 0 6px;
+
+                        @media (max-width:767px) {
+                            border-color: $baseThemeColor transparent transparent transparent;
+
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+.industry-report-post-wrap {
+    background: $baseThemeColor;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 30px;
+
+    .industry-report-post-img {
+        a {
+            display: block;
+
+            img {
+                width: 100%;
+                height: 270px;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .industry-report-post-content {
+        padding: 15px;
+        min-height: 130px;
+
+        h4 {
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 22px;
+
+            a {
+                color: #fff;
+
+                &:hover {
+                    opacity: .95;
+                }
+            }
+        }
+
+        span {
+            display: block;
+            color: #fff;
+        }
+    }
+}
+
+.industry-report-details-title {
+    font-size: 48px !important;
+    line-height: 56px !important;
+    font-weight: 700;
+    color: $baseThemeColor;
+
+    @media (max-width:767px) {
+        font-size: 24px !important;
+        line-height: 30px !important;
+    }
+}
+
+.select2-results__option {
+    padding: 4px;
+    font-size: 12px;
+    line-height: 14px;
+    display: block;
+    width: 100%;
+}
+
+.oil-gas-energy-area {
+    .container {
+        @media (min-width:1300px) {
+            width: 1110px;
+        }
+    }
+
+    .industry-report-post-wrap {
+        .industry-report-post-img {
+            a {
+                img {
+                    height: 160px;
+                }
+            }
+        }
+    }
+}
+
+.pagination-wrap {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .pageNumbers {
+        display: flex;
+        flex-wrap: wrap;
+
+        button,
+        a {
+            width: 40px;
+            height: 30px;
+            background: $baseThemeColor;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            color: #fff;
+            margin: 0px 5px;
+            border: 2px solid $baseThemeColor;
+            margin-bottom: 5px;
+
+            &:hover,
+            &.active {
+                background: #fff;
+                color: $baseThemeColor;
+            }
+        }
+
+    }
+
+    .previousPage,
+    .nextPage {
+        color: $baseThemeColor;
+        font-size: 34px;
+        cursor: pointer;
+        margin: 0px 5px;
+        position: relative;
+
+        &.disabled {
+            opacity: .6;
+            cursor: default;
+
+            &::before {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                content: "";
+                z-index: 1;
+            }
+        }
+    }
+}
+
+.oil-gas-sidebar-wrap {
+    .select2-container {
+        width: unset !important;
+        min-width: auto !important;
+        text-align: left;
+        margin-left: 10px;
+
+        &.select2-container--focus {
+            .selection {
+
+                .select2-selection {
+                    outline: none;
+                }
+            }
+        }
+
+        &.select2-container--open {
+            .selection {
+                .select2-selection--single {
+                    .select2-selection__arrow {
+                        b {
+                            border-color: transparent transparent $headingColor transparent;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .selection {
+            height: 25px;
+
+            .select2-selection {
+                background: transparent;
+                border: 1px solid #666;
+                height: 25px;
+                padding: 4px 24px 4px 10px;
+                position: relative;
+                border-radius: 0px;
+
+                .select2-selection__rendered {
+                    padding: 0px;
+                    font-size: 12px;
+                    line-height: 16px;
+                    color: $headingColor;
+                    text-transform: uppercase;
+                }
+
+                .select2-selection__arrow {
+                    height: 100%;
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    b {
+                        border-color: $headingColor transparent transparent transparent;
+                    }
+                }
+            }
+        }
+    }
+
+    &.oil-gas-sidebar-wrap2 {
+
+        .select2-container {
+            margin-left: 5px;
+            width: 75px !important;
+
+            &:first-child {
+                margin-right: 10px;
+            }
+
+            .selection {
+                height: 25px;
+
+                .select2-selection {
+                    border: 1px solid #747373;
+                    border-radius: 3px;
+
+                    .select2-selection__rendered {
+                        padding: 0px;
+                        font-size: 12px;
+                        line-height: 16px;
+                        color: $headingColor;
+                        text-transform: unset;
+                    }
+
+                    .select2-selection__arrow {
+                        height: 100%;
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+
+                        b {
+                            border-color: $headingColor transparent transparent transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.oilgas-category-items {
+    .category-item {
+        .category-img {
+            margin-right: 25px;
+
+            @media (max-width:991px) {
+                margin-right: 0;
+            }
+
+            a {
+                img {
+                    width: 350px;
+                    object-fit: cover;
+
+                    @media (max-width:991px) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

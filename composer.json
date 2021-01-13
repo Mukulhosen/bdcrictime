@@ -1,0 +1,11 @@
+{
+  "require": {
+	"phpoffice/phpspreadsheet": "^1.14",
+	"guzzlehttp/guzzle": "~5.0",
+	"verot/class.upload.php": "^2.0",
+	"nesbot/carbon": "^2.42.0"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
+

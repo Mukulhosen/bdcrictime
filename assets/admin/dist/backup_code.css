@@ -1,0 +1,81 @@
+
+
+
+
+
+/** CSS added By opu  **/
+
+
+
+.step_holder { }
+.steps { 
+    list-style: none; 
+    overflow: hidden; 
+    font: 22px Helvetica, Arial, Sans-Serif;
+}
+.steps li { 
+    float: left; 
+}
+.steps li a {
+    color: white;
+    text-decoration: none; 
+    padding: 15px 60px 15px 100px;
+    background: brown;                   /* fallback color */
+    background: hsla(188,77%,65%,1); 
+    position: relative; 
+    display: block;
+    float: left;
+}
+.steps li a:after { 
+    content: " "; 
+    display: block; 
+    width: 0; 
+    height: 0;
+    border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
+    border-bottom: 50px solid transparent;
+    border-left: 30px solid hsla(188,77%,65%,1);
+    position: absolute;
+    top: 50%;
+    margin-top: -50px; 
+    left: 100%;
+    z-index: 2; 
+}	
+.steps li a:before { 
+    content: " "; 
+    display: block; 
+    width: 0; 
+    height: 0;
+    border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
+    border-bottom: 50px solid transparent;
+    border-left: 30px solid white;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px; 
+    margin-left: 1px;
+    left: 100%;
+    z-index: 1; 
+}	
+.steps li:first-child a {
+    padding-left: 50px;
+}
+.steps li:nth-child(2) a       { background:        hsla(188,64%,64%,1); }
+.steps li:nth-child(2) a:after { border-left-color: hsla(188,64%,64%,1); }
+.steps li:nth-child(3) a       { background:        hsla(188,64%,64%,1); }
+.steps li:nth-child(3) a:after { border-left-color: hsla(188,64%,64%,1); }
+.steps li:nth-child(4) a       { background:        hsla(188,64%,64%,1); }
+.steps li:nth-child(4) a:after { border-left-color: hsla(188,64%,64%,1); }
+.steps li:nth-child(5) a       { background:        hsla(188,64%,64%,1); }
+.steps li:nth-child(5) a:after { border-left-color: hsla(188,64%,64%,1); }
+
+/*.steps li:last-child a {
+        background: white !important;
+        color: black;
+        pointer-events: none;
+        cursor: default;
+}
+.steps li:last-child a:after { border: 0; }
+*/
+
+.steps li a:hover, .steps li.active a { background: hsla(188,79%,71%,1); }
+.steps li a:hover:after, .steps li.active a:after { border-left-color: hsla(188,79%,71%,1) !important; }
+
