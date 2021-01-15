@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //ini_set('memory_limit', '-1');
 //error_reporting(0);
 
-$config['base_url'] = 'http://local.bdcrictime.com/';
+$config['base_url'] = 'http://128.199.31.164/';
 $config['index_page']               = '';
 $config['uri_protocol']             = 'REQUEST_URI';
 $config['url_suffix']               = '';
@@ -35,7 +35,7 @@ $config['sess_match_ip']            = FALSE;
 $config['sess_time_to_update']      = 7200; //60*60*24*7;
 $config['sess_regenerate_destroy']  = FALSE;
 $config['cookie_prefix']    = 'fm_';
-$config['cookie_domain']    = 'local.bdcrictime.com';
+$config['cookie_domain']    = '128.199.31.164';
 $config['cookie_path']      = '/';
 $config['cookie_secure']    = FALSE;
 $config['cookie_httponly']  = FALSE;

@@ -1,5 +1,4 @@
 <?php
-
 use Carbon\Carbon;
 
 defined('BASEPATH') or exit('No direct script access allowed');
@@ -12,6 +11,13 @@ class Post_api extends MX_Controller
 {
     function __construct()
     {
+						header('Access-Control-Allow-Origin: *');
+    header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, app-secret");
+    header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+    $method = $_SERVER['REQUEST_METHOD'];
+    if($method == "OPTIONS") {
+        die();
+    }
         parent::__construct();
         $this->load->library('form_validation');
         $this->load->helper('api_helper');
@@ -34,6 +40,7 @@ class Post_api extends MX_Controller
         $data = $this->db->query("SELECT post_category.name, post_category.slug, post_category.id FROM post_category")->result();
 
         // Finally send the final result
+
         return apiResponse([
             'status' => true,
             'message' => "",
@@ -159,13 +166,13 @@ class Post_api extends MX_Controller
             'status' => false,
             'message' => 'Invalid Request',
             'data' => new stdClass()
-        ], 405));
+        ], 200));
 
         if (app_secret != @$this->input->request_headers()['app-secret']) return (apiResponse([
             'status' => false,
             'message' => 'Bad Request',
             'data' => new stdClass()
-        ], 405));
+        ], 200));
 
         $category_id = $this->input->get('category');
 
@@ -198,9 +205,9 @@ class Post_api extends MX_Controller
         $this->db->limit($limit, $offset);
 
         $data['news'] = $this->db->get()->result();
-        if (empty($offset)){
-            $data['trending'] = $this->_mostRead($category_id, $sub_category_id, $child_category_id);
-        }
+
+				
+
         // Finally send the final result
         return apiResponse([
             'status' => true,
@@ -430,38 +437,8 @@ class Post_api extends MX_Controller
         $this->db->order_by('created', 'DESC');
         $this->db->limit($limit, $offset);
         $tag_posts = $this->db->get()->result();
-        $pin_posts = [];
 
 
-        if (empty($offset)) {
-            $pinPost = getTagPinPostsBySlug($slug);
-            if (!empty($pinPost)) {
-                if (!empty($pinPost->post_1)) {
-                    $pin_posts[] = [
-                        'category_name' => $pinPost->category_name_1,
-                        'title' => $pinPost->title_1,
-                        'post_url' => $pinPost->post_url_1,
-                        'modified' => $pinPost->modified_1,
-                        'created' => $pinPost->created_1,
-                        'description' => $pinPost->description_1,
-                        'author_name' => $pinPost->author_name_1,
-                        'post_image' => !empty($pinPost->post_image_1) ? base_url() . $pinPost->post_image_1 : ''
-                    ];
-                }
-                if (!empty($pinPost->post_2)) {
-                    $pin_posts[] = [
-                        'category_name' => $pinPost->category_name_2,
-                        'title' => $pinPost->title_2,
-                        'post_url' => $pinPost->post_url_2,
-                        'modified' => $pinPost->modified_2,
-                        'created' => $pinPost->created_2,
-                        'description' => $pinPost->description_2,
-                        'author_name' => $pinPost->author_name_2,
-                        'post_image' => !empty($pinPost->post_image_2) ? base_url() . $pinPost->post_image_2 : ''
-                    ];
-                }
-            }
-        }
 
 
         // Finally send the final result
@@ -469,7 +446,6 @@ class Post_api extends MX_Controller
             'status' => true,
             'message' => "",
             'data' => [
-                'pin_posts' => $pin_posts,
                 'tag_posts' => $tag_posts
             ]
         ]);

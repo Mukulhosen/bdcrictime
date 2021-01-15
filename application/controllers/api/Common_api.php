@@ -1,5 +1,5 @@
 <?php
-
+header('Access-Control-Allow-Origin: *');
 use Carbon\Carbon;
 
 defined('BASEPATH') or exit('No direct script access allowed');
@@ -13,6 +13,13 @@ class Common_api extends MX_Controller
 {
     function __construct()
     {
+						header('Access-Control-Allow-Origin: *');
+    header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, app-secret");
+    header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+    $method = $_SERVER['REQUEST_METHOD'];
+    if($method == "OPTIONS") {
+        die();
+    }
         parent::__construct();
         $this->load->library('form_validation');
         $this->load->helper('api_helper');

@@ -5,6 +5,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Posts extends Admin_controller {
 
     function __construct() {
+		ini_set('post_max_size','99500M');
+		ini_set('upload_max_size','100000M');
+		ini_set('memory_limit','128M');
+		ini_set('max_execution_time','5000');
         parent::__construct();
         $this->load->model('Posts_model');
         $this->load->model('Posts_Comment_model');
@@ -86,8 +90,9 @@ class Posts extends Admin_controller {
 
 
     public function create_action_post() {
-
         $slug = slugify($this->input->post('post_url', TRUE));
+    //    $slug = $this->input->post('post_url', TRUE);
+				
         if( $this->isDuplicateSlug( $slug ) ){
             $slug = $slug . rand(0000,9999);
         }

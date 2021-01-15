@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 // Common API
+
 
 $route['api/latest-news']    = 'api/Common_api/latest_news';
 
