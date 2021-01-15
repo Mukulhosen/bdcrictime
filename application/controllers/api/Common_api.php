@@ -34,7 +34,7 @@ class Common_api extends MX_Controller
 	private function getLatestNews($limit = 5, $offset = 0)
 	{
 		$ci = &get_instance();
-		$ci->db->select("c.name as category_name, c.id as category_id, c.slug as category_slug , p.title, p.post_url, p.modified, p.created, p.id");
+		$ci->db->select("c.name as category_name, c.id as category_id, c.slug as category_slug , p.title, p.post_url, p.modified, p.created, p.id, p.short_description as description");
 		$ci->db->select("CONCAT(u.first_name, ' ', u.last_name) AS author_name");
 		$ci->db->select("IF(p.post_image IS null OR p.post_image = '' , '', CONCAT('" . base_url() . "',p.post_image)) as post_image");
 		$ci->db->where('p.status', 'Publish');

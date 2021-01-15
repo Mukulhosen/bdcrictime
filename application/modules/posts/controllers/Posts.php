@@ -80,6 +80,7 @@ class Posts extends Admin_controller {
             'reject_note' => set_value('reject_note'),
             'photo_caption' => set_value('photo_caption'),
             'home_section_id' => set_value('home_section_id'),
+						'short_description' => set_value('short_description'),
         );
         $this->viewAdminContent('posts/posts/post_form', $data);
     }
@@ -133,6 +134,7 @@ class Posts extends Admin_controller {
             'modified'          => date('Y-m-d H:i:s'),
             'reject_note'       => $this->input->post('reject_note', TRUE),
             'photo_caption'       => $this->input->post('photo_caption', TRUE),
+            'short_description'       => $this->input->post('short_description', TRUE),
         );
 
 		if(in_array($this->role_id, [1,2,3])){
@@ -221,6 +223,7 @@ class Posts extends Admin_controller {
                 'tags'            => set_value('tags', $tags_array),
                 'reject_note'   => set_value('tags', $row->reject_note),
 				'home_section_id' => set_value('home_section_id', $row->home_section_id),
+				'short_description' => set_value('short_description', $row->short_description),
             );
 
             $this->viewAdminContent('posts/posts/post_form', $data);
@@ -284,6 +287,7 @@ class Posts extends Admin_controller {
             'seo_keyword'       => $this->input->post('seo_keyword', TRUE),
             'seo_description'   => $this->input->post('seo_description', TRUE),
             'reject_note'       => $this->input->post('reject_note', TRUE),
+            'short_description'       => $this->input->post('short_description', TRUE),
             'modified'          => date('Y-m-d H:i:s')
         );
 		if(in_array($this->role_id, [1,2])){

@@ -41,7 +41,17 @@
                                   class="form-control"><?php echo $description; ?></textarea>
                     </div>
                 </div>
-
+								
+								<div class="col-xs-12">
+                    <div class="form-group">
+                        <label>Short Description</label>
+                        <textarea placeholder="Add Short Description" name="short_description" id="short_description" class="form-control"><?=$short_description?></textarea>
+                    </div>
+                </div>
+								
+								
+								
+								
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-8 no-padding">

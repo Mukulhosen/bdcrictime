@@ -182,7 +182,7 @@ class Post_api extends MX_Controller
         $limit = !empty($this->input->get('limit')) ? $this->input->get('limit') : 10;
         $offset = !empty($this->input->get('offset')) ? $this->input->get('offset') : 0;
 
-        $this->db->select("main_category.name as category_name, main_category.id as category_id, main_category.slug as category_slug ,posts.title, posts.description, posts.id,posts.post_url, posts.created, CONCAT(users.first_name, ' ', users.last_name) as author_name");
+        $this->db->select("main_category.name as category_name, main_category.id as category_id, main_category.slug as category_slug ,posts.title, posts.short_description as description, posts.id,posts.post_url, posts.created, CONCAT(users.first_name, ' ', users.last_name) as author_name");
         $this->db->select("IF(posts.post_image IS null OR posts.post_image = '' , '', CONCAT('" . base_url() . "',posts.post_image)) as post_image");
         $this->db->from('posts');
         $this->db->join('users', "posts.user_id = users.id", 'LEFT');
@@ -424,7 +424,7 @@ class Post_api extends MX_Controller
         }
 
 
-        $this->db->select("c.name as category_name, c.id as category_id, c.slug as category_slug , p.title, p.post_url, p.modified, p.created, p.id");
+        $this->db->select("c.name as category_name, c.id as category_id, c.slug as category_slug , p.title, p.post_url, p.modified, p.created, p.id, p.short_description as description");
         $this->db->select("CONCAT(u.first_name, ' ', u.last_name) AS author_name");
         $this->db->select("IF(p.post_image IS null OR p.post_image = '' , '', CONCAT('" . base_url() . "',p.post_image)) as post_image");
         $this->db->where_in('p.post_show', ['Frontend']);
@@ -497,7 +497,7 @@ class Post_api extends MX_Controller
         if ($type == 'autocomplete'){
             $this->db->select("p.title, p.post_url");
         } else {
-            $this->db->select("c.name as category_name ,c.id as category_id, c.slug as category_slug , p.title, p.post_url ,  p.modified, p.created, p.id");
+            $this->db->select("c.name as category_name ,c.id as category_id, c.slug as category_slug , p.title, p.post_url ,  p.modified, p.created, p.id, p.short_description as description");
             $this->db->select("CONCAT(u.first_name, ' ', u.last_name) AS author_name");
             $this->db->select("IF(p.post_image IS null OR p.post_image = '' , '', CONCAT('" . base_url() . "',p.post_image)) as post_image");
             $this->db->join('users as u', 'u.id = p.user_id', 'LEFT');
@@ -617,7 +617,7 @@ class Post_api extends MX_Controller
     {
 
         $ci = &get_instance();
-        $ci->db->select("c.name as category_name, c.id as category_id, c.slug as category_slug , p.title, p.post_url, p.modified, p.created, p.id");
+        $ci->db->select("c.name as category_name, c.id as category_id, c.slug as category_slug , p.title, p.post_url, p.modified, p.created, p.id, p.short_description as description");
         $ci->db->select("CONCAT(u.first_name, ' ', u.last_name) AS author_name");
         $ci->db->select("IF(p.post_image IS null OR p.post_image = '' , '', CONCAT('" . base_url() . "',p.post_image)) as post_image");
         //$ci->db->select("CONCAT(u.first_name, ' ', u.last_name) AS name");
@@ -690,7 +690,7 @@ class Post_api extends MX_Controller
 	private function getPostByHomeCatData($section_id, $limit = 5, $special_category = [], $offset = 0)
 	{
 		$ci = &get_instance();
-		$ci->db->select("c.name as category_name, c.id as category_id, c.slug as category_slug , p.title, p.post_url, p.modified, p.created, p.id, p.description");
+		$ci->db->select("c.name as category_name, c.id as category_id, c.slug as category_slug , p.title, p.post_url, p.modified, p.created, p.id, p.short_description as description");
 		$ci->db->select("CONCAT(u.first_name, ' ', u.last_name) AS author_name");
 		$ci->db->select("IF(p.post_image IS null OR p.post_image = '' , '', CONCAT('" . base_url() . "',p.post_image)) as post_image");
 		$ci->db->from('posts as p');
@@ -743,7 +743,7 @@ class Post_api extends MX_Controller
 		$total = $this->db->count_all_results();
 
 		$this->db->from('posts');
-		$this->db->select('id, comment_count, post_url, title, modified, created, description');
+		$this->db->select('id, comment_count, post_url, title, modified, created, short_description as description');
 		$this->db->select("IF(post_image IS null OR post_image = '' , '', CONCAT('" . base_url() . "',post_image)) as post_image");
 		$this->db->where_in('post_show', ['Frontend']);
 		if ($user_data['id']) {
